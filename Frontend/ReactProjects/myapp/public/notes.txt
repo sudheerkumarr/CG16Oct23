@@ -1,0 +1,32 @@
+- Installation
+npm create vite@latest
+myapp
+react
+javascript
+
+cd myapp
+npm install
+npm run dev
+
+- extensions
+Simple code snippets
+SonarList
+
+----------------------------
+- Component types
+1. Class Component - class
+   - shortcuts to create - imrc & cc or ccc
+2. Functional Component - function
+   - shortcuts to create - imr & sfc
+
+
+         App.jsx - root component(Parent) for all components
+HomeComponent   LoginComponent    NavComponent    RegisterComponent 
+
+
+- Types of exports
+1. Named export
+   - import {functionName1, functionName2...} from 'module';
+2. default export - default keyword is used
+   - import functionName/componentName from 'module';
+
