@@ -5,12 +5,16 @@ import { Register } from './components/register';
 import Login from './components/login';
 import Users from './components/users';
 import Customers from './components/customers';
+import Counter from './components/counter';
+import CounterClassComp from './components/counterClassComp';
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+
       <Nav />
+      <Counter />
+      <CounterClassComp />
       <Register />
       <Login />
       <Users />
