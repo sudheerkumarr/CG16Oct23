@@ -6,19 +6,26 @@ import Login from './components/login';
 import Users from './components/users';
 import Customers from './components/customers';
 import Counter from './components/counter';
+import Home from './components/home';
 import CounterClassComp from './components/counterClassComp';
+import Employees from './components/employee';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
   return (
     <>
-
       <Nav />
-      <Counter />
-      <CounterClassComp />
-      <Register />
-      <Login />
-      <Users />
-      <Customers />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Navigate to="/" replace={true} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/employees" element={<Employees />} />
+      </Routes>
     </>
   )
 }
