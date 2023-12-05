@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Employees = () => {
     // Step1 : define state to keep employee details
@@ -35,8 +36,9 @@ const Employees = () => {
 
     }
     return (
-        <div>
-            <table className='table table-striped w-75 mx-auto'>
+        <div className='w-75 mx-auto'>
+            <Link className="float-end btn btn-danger mt-3" to="/employee/add">Add</Link>
+            <table className='table table-striped'>
                 <thead>
                     <tr>
                         <th>Id</th>

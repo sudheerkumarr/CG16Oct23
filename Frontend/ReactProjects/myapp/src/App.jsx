@@ -10,6 +10,7 @@ import Home from './components/home';
 import CounterClassComp from './components/counterClassComp';
 import Employees from './components/employee';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import AddEmployee from './components/addEmployee';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/users" element={<Users />} />
         <Route path="/employees" element={<Employees />} />
+        <Route path="/employee/add" element={<AddEmployee />} />
       </Routes>
     </>
   )

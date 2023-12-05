@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-export const Register = () => {
-    const navigate = useNavigate();
 
+const AddEmployee = () => {
+
+    const navigate = useNavigate();
 
     // define state
     const [user, setUser] = useState({
@@ -13,7 +14,6 @@ export const Register = () => {
         email: "",
         password: ""
     });
-
     const handleChange = (event) => {
         console.log("Handle change");
         console.log(event);
@@ -33,14 +33,15 @@ export const Register = () => {
             .then((response) => {
                 console.log(response);
                 // redirect user to login page
-                navigate("/login")
+                navigate("/employees")
             })
             .catch((err) => { console.log(err) })
     }
 
+
     return (
         <div>
-            <p style={{ color: "red", textTransform: "capitalize" }} className="mt-3 h3 bg-secondary w-50 mx-auto text-center text-white p-2 ">Register</p>
+            <p style={{ color: "red", textTransform: "capitalize" }} className="mt-3 h3 bg-secondary w-50 mx-auto text-center text-white p-2 ">Add Employee</p>
             <form onSubmit={handleSubmit} className="w-50 mx-auto border p-3  rounded shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                 <label className="form-label">FirstName</label>
                 <input onChange={handleChange} name="firstName" value={user.firstName} className="form-control mb-3" type="text" placeholder="Enter first name" />
@@ -54,11 +55,13 @@ export const Register = () => {
                 <input onChange={handleChange} name="password" value={user.password} className="form-control mb-3" type="password" placeholder="Enter password" />
 
                 <div className="d-grid gap-2">
-                    <input className="btn btn-secondary" type="submit" value="Register" />
+                    <input className="btn btn-secondary" type="submit" value="Add" />
                 </div>
 
             </form>
         </div >
-    )
-};
 
+    );
+}
+
+export default AddEmployee;
