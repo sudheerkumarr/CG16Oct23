@@ -11,7 +11,8 @@ import CounterClassComp from './components/counterClassComp';
 import Employees from './components/employee';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AddEmployee from './components/addEmployee';
-
+import UpdateEmployee from './components/updateEmployee';
+import Search from './components/search';
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/employees" element={<Employees />} />
         <Route path="/employee/add" element={<AddEmployee />} />
-      </Routes>
+        <Route path="/employee/update/:id" element={<UpdateEmployee />} />
+        <Route path="/employee/search" element={<Search />} />
+      </Routes >
     </>
   )
 }

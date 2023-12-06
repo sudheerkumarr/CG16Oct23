@@ -37,6 +37,7 @@ const Employees = () => {
     }
     return (
         <div className='w-75 mx-auto'>
+            <Link className="float-end btn btn-warning mt-3 ms-2" to="/employee/search">Search</Link>
             <Link className="float-end btn btn-danger mt-3" to="/employee/add">Add</Link>
             <table className='table table-striped'>
                 <thead>
@@ -45,6 +46,7 @@ const Employees = () => {
                         <th>FirstName</th>
                         <th>LastName</th>
                         <th>ContactNo</th>
+                        <th>Email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -56,9 +58,10 @@ const Employees = () => {
                             <td>{emp.firstName}</td>
                             <td>{emp.lastName}</td>
                             <td>{emp.contactNo}</td>
+                            <td>{emp.login.email}</td>
                             <td>
                                 <i className="bi bi-trash3-fill me-4" type="button" onClick={() => handleDelete(emp.empId)}></i>
-                                <i className="bi bi-pencil-fill"></i>
+                                <Link to={`/employee/update/${emp.empId}`}><i className="bi bi-pencil-fill"></i></Link>
                             </td>
                         </tr>
                     ))}
