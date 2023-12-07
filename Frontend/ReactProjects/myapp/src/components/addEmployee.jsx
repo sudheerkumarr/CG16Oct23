@@ -32,6 +32,7 @@ const AddEmployee = () => {
             .post("http://localhost:8082/employee/add/dto", user)
             .then((response) => {
                 console.log(response);
+                alert("User added successfully!")
                 // redirect user to login page
                 navigate("/employees")
             })

@@ -32,6 +32,7 @@ export const Register = () => {
             .post("http://localhost:8082/employee/add/dto", user)
             .then((response) => {
                 console.log(response);
+                alert("User registered successfully!")
                 // redirect user to login page
                 navigate("/login")
             })
