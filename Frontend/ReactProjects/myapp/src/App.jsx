@@ -15,6 +15,7 @@ import UpdateEmployee from './components/updateEmployee';
 import Search from './components/search';
 
 function App() {
+
   return (
     <>
       <Nav />

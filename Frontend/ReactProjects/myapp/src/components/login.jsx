@@ -32,7 +32,7 @@ class Login extends Component {
                 this.setState({ errMsg: "" })
                 console.log(res);
                 alert("User logged in successfully!");
-                this.props.navigation.navigate('/home');
+                this.context.history.go('/home');
             })
             .catch((err) => {
                 console.log(err);
