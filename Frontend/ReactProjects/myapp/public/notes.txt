@@ -34,20 +34,12 @@ HomeComponent   LoginComponent    NavComponent    RegisterComponent
 // Form Validation steps
 // Step 1: install joi-browser package
 npm i joi-browser
-
 // Step 2: register.jsx
 import Joi from "joi-browser"
-
-
 // Step 3: Define schema as per form 
-
-
+const schema = Joi.object({})
 // Step 4: Create validate() to validate form data w.r.t schema
-
-
 // Step 5: handleSubmit() - call validate() function before sending form data
 //         to backend
-
-
 // Step 6: if validate() not returning errors, send form data to backend
 //            else display error messages below form fields 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import Card from "./card";
 // useState() - react hook method - define state in functional component
 const Customers = () => {
     const [customers, setCustomers] = useState([
@@ -62,13 +62,7 @@ const Customers = () => {
             <div className="row">
                 {customers.map(c => (
                     <div key="{c.id}" className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div key="{c.id}" className="card mb-3" style={{ width: "18rem" }}>
-                            <img src={c.avatar} className="card-img-top" alt="{c.first_name}" />
-                            <div className="card-body">
-                                <h5 className="card-title">{c.first_name}</h5>
-                                <p className="card-text">{c.email}</p>
-                            </div>
-                        </div>
+                        <Card customer={c} />
                     </div>
                 ))}
 

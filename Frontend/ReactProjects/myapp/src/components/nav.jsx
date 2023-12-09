@@ -1,5 +1,5 @@
 // imr
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // sfc - stateless functional component
@@ -12,6 +12,14 @@ import { NavLink } from 'react-router-dom';
 
 
 function Nav() {
+    localStorage.setItem("isLogin", true);
+    // // Get data from local storage
+    // const [login, setLogin] = useState({
+    //     isLogin: localStorage.getItem("isLogin"),
+    //     role: localStorage.getItem("role"),
+    //     email: localStorage.getItem("email")
+    // });
+
     return (
         <div>
             <nav className="navbar bg-secondary navbar-expand-lg" data-bs-theme="dark">
@@ -36,17 +44,26 @@ function Nav() {
                             </li>
                         </ul>
                         <ul className="navbar-nav">
-                            <li className="nav-item">
+
+                            < li className="nav-item">
                                 <NavLink className="nav-link" to="/login">Login</NavLink>
                             </li>
+
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/register">Register</NavLink>
                             </li>
+
+                            < li className="nav-item">
+                                <NavLink className="nav-link" to="/logout">Logout</NavLink>
+                            </li>
+
+
+
                         </ul>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </nav >
+        </div >
     );
 }
 
