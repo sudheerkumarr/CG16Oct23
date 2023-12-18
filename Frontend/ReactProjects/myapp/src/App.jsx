@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect, useMemo } from 'react'
 import Nav from './components/nav'
 import { Register } from './components/register';
 import Login from './components/login';
@@ -16,10 +16,20 @@ import Logout from './components/logout';
 import Parent from './components/Parent';
 
 
+export const LoginContext = createContext();
+
 function App() {
 
   // functional component state
   const [count, setCount] = useState(0);
+
+  const [login, setLogin] = useState({
+    email: "",
+    role: "",
+    login: false
+  });
+
+  const value = { login, setLogin };
 
   // increment function
   const incr = () => {
@@ -32,15 +42,16 @@ function App() {
 
 
   return (
-    <>
-      {console.log(count)}
+
+    <LoginContext.Provider value={value}>
+      {console.log(value.login)}
       <Nav />
       <Routes>
         <Route path="/" element={<Home count={count} />} />
         <Route path="/home" element={<Navigate to="/" replace={true} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/customers" element={<Customers />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/customers" element={<Customers />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/users" element={<Users />} />
         <Route path="/employees" element={<Employees />} />
@@ -50,7 +61,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/parent" element={<Parent count={count} incr={incr} decr={decr} />} />
       </Routes >
-    </>
+    </LoginContext.Provider >
   )
 }
 

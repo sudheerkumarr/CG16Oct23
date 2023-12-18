@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../App';
+
 
 const Login = () => {
 
@@ -15,6 +17,7 @@ const Login = () => {
 
     const [errMsg, setErrMsg] = useState("");
 
+    const value = useContext(LoginContext);
 
     // methods
     const handleChange = (event) => {
@@ -36,10 +39,10 @@ const Login = () => {
             .then((res) => {
                 setErrMsg("");
                 console.log(res);
-                localStorage.setItem("email", res.data.email);
-                localStorage.setItem("role", res.data.role);
-                localStorage.setItem("isLogin", `${res.data.login}`);
-
+                // localStorage.setItem("email", res.data.email);
+                // localStorage.setItem("role", res.data.role);
+                // localStorage.setItem("isLogin", `${res.data.login}`);
+                value.setLogin(res.data);
                 alert("User logged in successfully!");
                 navigate('/home');
             })

@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import axios from "axios";
+import { LoginContext } from "../App";
 
 const Logout = () => {
+    const value = useContext(LoginContext);
+
     useEffect(() => {
-        axios.get(`http://localhost:8082/logout/${localStorage.getItem('email')}`)
+        axios.get(`http://localhost:8082/logout/${value.login.email}`)
             .then((res) => {
                 console.log(res);
-                localStorage.setItem("isLogin", false);
+                value.setLogin(res.data);
             })
             .catch((err) => { console.log(err) })
 
